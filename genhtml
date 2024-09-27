@@ -96,7 +96,7 @@ echo '<!DOCTYPE html>
       <a href="#audio">Audio</a>
       <a href="#docs">Documentatie</a>
       <a href="#online">Online</a>
-      <a href="https://calendar.google.com/calendar/embed?src=bf4e694c5fb25a678e2bc544655a516eefd897d6aec107d334525b20aa1fef78%40group.calendar.google.com&ctz=Europe%2FAmsterdam">Calender</a>
+      <a href="https://calendar.google.com/calendar/u/0?cid=MjY0NzRmZmRiYWM5ZTZjNjM4ZDQwMDhkMmIxOTE2OGY1ZTYzYWU0ZDczYjg5NGNiYzMwNzYyOTJhZjc4OGQ3ZkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t">Calender</a>
       <a href="javascript:void(0);" class="icon" onclick="myFunction()">
         <i class="fa fa-bars"></i>
       </a>
@@ -127,7 +127,11 @@ for file in $(ls -1 ./*/*.mp3 ./*/*.mpeg|sort); do
 done
 echo '</table> ' >> "$output_html"
 
-    
+echo " " >> "$output_html"
+for file in $(ls -1 ./navratri*.html); do
+ cat $file >> "$output_html"
+done 
+
 echo '<h2 id="docs"> Documentatie</h2>
         <table>
         <tr>
@@ -142,12 +146,12 @@ echo "        </tr>" >> "$output_html"
 
 echo "        <tr>" >> "$output_html"
 echo "            <td>Sampradaaya Calender online</td>" >> "$output_html"
-echo "            <td><a href=\"https://calendar.google.com/calendar/embed?src=bf4e694c5fb25a678e2bc544655a516eefd897d6aec107d334525b20aa1fef78%40group.calendar.google.com&ctz=Europe%2FAmsterdam\">Sampradaaya Kalender 2023-2024 online</a></td>" >> "$output_html"
+echo "            <td><a href=\"https://calendar.google.com/calendar/u/0?cid=MjY0NzRmZmRiYWM5ZTZjNjM4ZDQwMDhkMmIxOTE2OGY1ZTYzYWU0ZDczYjg5NGNiYzMwNzYyOTJhZjc4OGQ3ZkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t\">Sampradaaya Kalender 2024-2025 online</a></td>" >> "$output_html"
 echo "        </tr>" >> "$output_html"
 
 echo "        <tr>" >> "$output_html"
 echo "            <td>Sampradaìaya Calender ical</td>" >> "$output_html"
-echo "            <td><a href=\"https://calendar.google.com/calendar/ical/bf4e694c5fb25a678e2bc544655a516eefd897d6aec107d334525b20aa1fef78%40group.calendar.google.com/public/basic.ics\">Sampradaaya Kalender 2023-2024 ical</a></td>" >> "$output_html"
+echo "            <td><a href=\"https://calendar.google.com/calendar/ical/26474ffdbac9e6c638d4008d2b19168f5e63ae4d73b894cbc3076292af788d7f%40group.calendar.google.com/public/basic.ics\">Sampradaaya Kalender 2024-2025 ical</a></td>" >> "$output_html"
 echo "        </tr>" >> "$output_html"
 
 for file in $(ls -1 ./*/*.pdf |sort); do
