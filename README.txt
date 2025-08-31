@@ -5,19 +5,19 @@ GIT
 
 1. Clone project 
 
-    cd ~/project
+    cd ~/Project
     git clone https://github.com/bhakti-yoga/bhakti-yoga.github.io.git
    
 2. Change website index.html en files
    
-    cd GoogleDrive/Spirit/yoga/web                             
+    cd ~/GoogleDrive/Spirit/yoga/web                             
     ./genhtml                                                  
-    cp index.html ~/projects/bhakti-yoga/                      
-    cp -rp Gebed/ ~/projects/bhakti-yoga/                      
+    cp index.html ~/Projects/bhakti-yoga/                      
+    cp -rp Gebed/ ~/Projects/bhakti-yoga/                      
 
 3. Git add, commit push
                                         
-    cd projects/bhakti-yoga/                                                                                                        
+    cd Projects/bhakti-yoga/                                                                                                        
     git add index.html Gebed/*                                 
     git commit -m "2de gebed"                                  
     git push        
@@ -67,6 +67,8 @@ BOEKEN ONLINE
     online Bhagavad Gita https://www.holy-bhagavad-gita.org/Index
     online Bhagavad Gita https://bhagavadgita.io/chapter/1
     online Bhagavad Gita  https://vedabase.io/en/library/bg/
+    
+    https://prabhupadabooks.com/
 
 BOEKEN AUDIO
 
