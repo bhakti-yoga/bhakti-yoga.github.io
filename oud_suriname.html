@@ -1,0 +1,626 @@
+  <!-- 
+
+  David Apon
+  
+    Van Albina tot Nickerie - de Troepenmacht in Suriname (TRIS)
+    https://youtu.be/oxxiRfnSIyo?t=921
+    
+    The Spiral Road (1962)
+    https://vk.com/video-68583631_456247773?t=20m57s
+    
+    
+  Check or ping a youtube video URL:
+    curl -o /dev/null -s -w "%{http_code}\n" https://www.youtube.com/watch?v=YOUR_VIDEO_ID 
+
+ Dutch Guiana
+  https://openbeelden.nl/media.nl
+    
+ Internet Archive: Suriname / Dutch  Guiana
+    https://archive.org/details/movies?tab=collection&query=Suriname&sort=-date&and%5B%5D=year%3A%221927%22&and%5B%5D=year%3A%221933%22&and%5B%5D=year%3A%221936%22&and%5B%5D=year%3A%221943%22&and%5B%5D=year%3A%221944%22&and%5B%5D=year%3A%221947%22&and%5B%5D=year%3A%221948%22&and%5B%5D=year%3A%221950%22&and%5B%5D=year%3A%221954%22&and%5B%5D=year%3A%221955%22
+    https://archive.org/details/movies?tab=collection&query=Dutch+Guiana&sort=-date
+    https://archive.org/details/BNA-DIG-EXT-PERISCOPE-42894
+    https://archive.org/details/gov.archives.arc.38661
+    https://archive.org/details/Leenya
+    
+ https://suriname.nu/surinamevideo/
+  
+  Suriname 1955
+    http://ok.ru/video/2990373997194
+    
+  Suriname 1955 deel 2
+    https://www.facebook.com/watch/?v=642702003135388
+  
+  Suriname 1966  
+    https://www.facebook.com/watch/?v=721317055429947    
+    
+  Suriname View
+    https://www.youtube.com/@surinameview/videos
+  
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Video Site</title>
+    <style>
+        body {
+            background-color: #141414;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+        .tile {
+            width: 300px;
+            height: 169px;
+            background-color: #333;
+            position: relative;
+            cursor: pointer;
+        }
+        .tile img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .tile .title {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            text-align: center;
+            font-size: 14px;
+        }
+        .video-modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1000;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+        }
+        .video-modal iframe {
+            width: 100%;
+            height: 100%;
+        }
+        .video-modal .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>1890-1959 Historische Videos Suriname </h1>
+    <div class="container">
+      <div class="tile" data-video-id="X8MT3FAsaGA">
+            <img src="https://img.youtube.com/vi/X8MT3FAsaGA/hqdefault.jpg" alt="Video 1">
+            <div class="title">1891: SURINAME - Paramaribo 1891- 1950 in Kleuren Ai upgrade 2023 Deel 1</div>
+        </div>
+        <div class="tile" data-video-id="6yM_WYeF3dA">
+            <img src="https://img.youtube.com/vi/6yM_WYeF3dA/hqdefault.jpg" alt="Video 1">
+            <div class="title">1900~: Suriname Paramaribo 123 jaar geleden ingekleurd - Delen graag !</div>
+        </div>
+        <div class="tile" data-video-id="f2xgUqVkQHc">
+            <img src="https://img.youtube.com/vi/f2xgUqVkQHc/hqdefault.jpg" alt="Video 1">
+            <div class="title">19xx~: Suriname jaman mbyen : Simbah simbah nandur pari lan intuk gajian.</div>
+        </div>
+
+      <br>
+	</div>
+  
+<h1>1920-1929 Historische Videos Suriname </h1>
+    <div class="container">        
+	    <div class="tile" data-video-id="GiHY-h7K7Kc">
+            <img src="https://img.youtube.com/vi/GiHY-h7K7Kc/hqdefault.jpg" alt="Video 1">
+            <div class="title">1920: Suriname (1920)</div>
+        </div>
+
+      <div class="tile" data-video-id="wq81S8UzSmE">
+            <img src="https://img.youtube.com/vi/wq81S8UzSmE/hqdefault.jpg" alt="Video 1">
+            <div class="title">1921: Suriname in de jaren 20 Deel 1</div>
+        </div>
+       <div class="tile" data-video-id="-VOvKcyFf-k">
+            <img src="https://img.youtube.com/vi/-VOvKcyFf-k/hqdefault.jpg" alt="Video 1">
+            <div class="title">1921: Suriname 1921 in kleur! Historische beelden ingekleurd met AI</div>
+        </div>       
+      <div class="tile" data-video-id="UNXyvmVHEOM">
+            <img src="https://img.youtube.com/vi/UNXyvmVHEOM/hqdefault.jpg" alt="Video 1">
+            <div class="title">1921: Historische videobeelden van Suriname uit 1921</div>
+        </div>
+        <div class="tile" data-video-id="_ogmN55oBVw">
+            <img src="https://img.youtube.com/vi/_ogmN55oBVw/hqdefault.jpg" alt="Video 1">
+            <div class="title">1927: Suriname 1927</div>
+        </div>
+        
+        <div class="tile" data-video-id="4Fg9KxiF0Tk">
+            <img src="https://img.youtube.com/vi/4Fg9KxiF0Tk/hqdefault.jpg" alt="Video 1">
+            <div class="title">1927: Historische videobeelden Suriname en Nederlands Indië uit 1927</div>
+        </div>
+        <div class="tile" data-video-id="YPNyjgvmLfU">
+            <img src="https://img.youtube.com/vi/YPNyjgvmLfU/hqdefault.jpg" alt="Video 2">
+            <div class="title">1929: Historische beelden binnenland Suriname (1929)</div>
+        </div>
+      		<br>
+	</div>
+  
+<h1>1930-1939 Historische Videos Suriname </h1>
+    <div class="container">        
+        <div class="tile" data-video-id="uZxt8GK79gA">
+            <img src="https://img.youtube.com/vi/uZxt8GK79gA/hqdefault.jpg" alt="Video 2">
+            <div class="title">1930-1940: Paramaribo Suriname rond 1930 - 1940 in kleur Colorized with AI from Google 2022</div>
+        </div>
+        <div class="tile" data-video-id="B3AfV__zcjo">
+              <img src="https://img.youtube.com/vi/B3AfV__zcjo/hqdefault.jpg" alt="Video 2">
+              <div class="title">1933: Dutch Guiana - Land of the Djuka 1933</div>
+        </div>
+          <div class="tile" data-video-id="TsDzipXNNqY">
+              <img src="https://img.youtube.com/vi/TsDzipXNNqY/hqdefault.jpg" alt="Video 1">
+              <div class="title">1933: Maroons from Suriname</div>
+              <!-- Cast & crew IMDbPro Dutch Guiana: 'Land of the Djuka' -->
+          </div>
+        <div class="tile" data-video-id="N2ry7yuMP8A">
+              <img src="https://img.youtube.com/vi/N2ry7yuMP8A/hqdefault.jpg" alt="Video 2">
+              <div class="title">1934: Bouw van een EBG Kerk te Leiding 7B Suriname (1934)</div>
+        </div>     
+        <div class="tile" data-video-id="GpHp_W_E7F8">
+              <img src="https://img.youtube.com/vi/GpHp_W_E7F8/hqdefault.jpg" alt="Video 2">
+              <div class="title">1935: Suriname 1935 ingekleurd en ai upscaled 1080P Delen AUB .</div>
+        </div> 
+        <div class="tile" data-video-id="irx0vV4yqiw">
+              <img src="https://img.youtube.com/vi/irx0vV4yqiw/hqdefault.jpg" alt="Video 2">
+              <div class="title">1936: Reel 4: Paramaribo, Suriname, (1936)</div>
+        </div>  
+      
+        <div class="tile">
+          <a href="https://www.youtube.com/watch?v=emZDIAF7AWQ&t=915s" target="_blank" 
+           title="They fly over British Guiana to Dutch Guiana. The Suriname government house is shown. A woman carries objects on her head in Paraiba. The Blanche Marie waterfalls are magnificent. Ndyuka villagers make sugar and bread. A baby is bathed in a basket. Hardwoods are dragged down a hill by men or by teams of yoked water buffalo. The villagers use large dugout canoes to travel, including through rapids (15:15-22:40)">
+            <img src="https://img.youtube.com/vi/emZDIAF7AWQ/hqdefault.jpg" alt="Video 2"></a>
+            <div class="title">1937: FLYING THE LINDBERGH TRAIL 1937 PAN AM AIRLINES / SOUTH AMERICA TRAVELOGUE FILM 65064</div>
+        </div>       
+        
+        <div class="tile" data-video-id="EnJpAphJOwg">
+              <img src="https://img.youtube.com/vi/EnJpAphJOwg/hqdefault.jpg" alt="Video 2">
+              <div class="title">1939: Moravian Nurse "Nelly" on duty – Suriname 1939</div>
+        </div>           
+
+        <div class="tile">
+            <a href="https://www.youtube.com/watch?v=JB0Zsq2L0yM&t=262" target="_blank">
+              <img src="https://img.youtube.com/vi/JB0Zsq2L0yM/hqdefault.jpg" alt="Video 2"></a>
+              <div class="title">1939: Amateur Home Movie of Trinidad and Suriname, c. 1939 - Film 1006018</div>
+        </div>   
+
+    		<br>
+	</div>
+  
+<h1>1940-1949 Historische Videos Suriname </h1>
+    <div class="container">
+
+      <div class="tile" data-video-id="NISvi9FTnDQ">
+            <img src="https://img.youtube.com/vi/NISvi9FTnDQ/hqdefault.jpg" alt="Video 2">
+            <div class="title">1940-1960: Suriname 1940 /50/60 ingekleurd - Like en Delen aub !</div>
+      </div>
+
+      <div class="tile" data-video-id="LBvh9BndbS8">
+            <img src="https://img.youtube.com/vi/LBvh9BndbS8/hqdefault.jpg" alt="Video 2">
+            <div class="title">1940-1945: Belangrijke bijdrage van Suriname aan de tweede wereldoorlog</div>
+      </div>
+      <div class="tile" data-video-id="RqqV4LSAV8w">
+            <img src="https://img.youtube.com/vi/RqqV4LSAV8w/hqdefault.jpg" alt="Video 2">
+            <div class="title">1941:Suriname en WOII: Amerikaanse defensiefilm over de winning van bauxiet voor aluminium</div>
+      </div> 
+      <div class="tile" data-video-id="dhUg9uWywPE">
+            <img src="https://img.youtube.com/vi/dhUg9uWywPE/hqdefault.jpg" alt="Video 2">
+            <div class="title">1942:WOII: Het Surinaamse leger krijgt Amerikaanse versterking; Koningin Wilhelmina in de VS</div>
+      </div>         
+      <div class="tile" data-video-id="G6AigKW7-TY">
+            <img src="https://img.youtube.com/vi/G6AigKW7-TY/hqdefault.jpg" alt="Video 2">
+            <div class="title">1943: PRINCESS JULIANA MAKES FIRST VISIT TO DUTCH GUIANA [ETC.]		</div>
+     
+      </div>		
+        <div class="tile" data-video-id="6pDTY8IG-iU">
+              <img src="https://img.youtube.com/vi/6pDTY8IG-iU/hqdefault.jpg" alt="Video 2">
+              <div class="title">1945-1982: Suriname 1945 1982</div>
+        </div>		
+          
+      <div class="tile" data-video-id="n-J08O1f4yo">
+              <img src="https://img.youtube.com/vi/n-J08O1f4yo/hqdefault.jpg" alt="Video 2">
+              <div class="title">1947: De Centrale Markt van Paramaribo (C.M.P.)</div>
+          </div>		
+     <div class="tile" data-video-id="c1Detxfdx1c">
+          <img src="https://img.youtube.com/vi/c1Detxfdx1c/hqdefault.jpg" alt="Video 2">
+          <div class="title">1947: Nieuws uit de West - Markt in Paramaribo</div>
+      </div>		   
+      <div class="tile" data-video-id="Evsi5XQcHo0">
+            <img src="https://img.youtube.com/vi/Evsi5XQcHo0/hqdefault.jpg" alt="Video 2">
+            <div class="title">1947: Nieuws uit de West: Paramaribo (1947)</div>
+        </div>		
+                
+      <div class="tile" data-video-id="lOQTn-8-AMA">
+              <img src="https://img.youtube.com/vi/lOQTn-8-AMA/hqdefault.jpg" alt="Video 2">
+              <div class="title">1947: 1947 Het oerwoud van Suriname</div>
+          </div>		
+      <div class="tile" data-video-id="th1gLPXC47E">
+              <img src="https://img.youtube.com/vi/th1gLPXC47E/hqdefault.jpg" alt="Video 2">
+              <div class="title">1948: Historische beelden Paramaribo, Suriname (1948)</div>
+          </div>		
+        
+        <div class="tile" data-video-id="KPjMZ3xFKMs">
+            <img src="https://img.youtube.com/vi/KPjMZ3xFKMs/hqdefault.jpg" alt="Video 2">
+            <div class="title">1948: Paramaribo - Capital Of Dutch Guiana (1948)</div>
+        </div>		
+   
+        <div class="tile" data-video-id="6DMnn7bcyp0">
+                <img src="https://img.youtube.com/vi/6DMnn7bcyp0/hqdefault.jpg" alt="Video 2">
+                <div class="title">1948: Bevolking van Suriname 1948</div>
+        </div>
+ 		<br>
+	</div>
+  
+<h1>1950-1959 Historische Videos Suriname </h1>
+    <div class="container">
+        
+        <div class="tile" data-video-id="9K0n8FjnQ6A">
+            <img src="https://img.youtube.com/vi/9K0n8FjnQ6A/hqdefault.jpg" alt="Video 2">
+            <div class="title">1950: Suriname 1950 in kleur Ai upgrade van B&W Stil Film.</div>
+        </div>
+        <div class="tile" data-video-id="0Uu7VVYfuSg">
+            <img src="https://img.youtube.com/vi/0Uu7VVYfuSg/hqdefault.jpg" alt="Video 2">
+            <div class="title">1950-1980: SURINAME Paramaribo 1950 - 1980 In Kleur Ai Upgrade - Deel 2</div>
+        </div>
+        <div class="tile" data-video-id="UYdNhNfnpA4">
+          <img src="https://img.youtube.com/vi/UYdNhNfnpA4/hqdefault.jpg" alt="Video 1">
+          <div class="title">1951~: Paramaribo Hoofdstad van Suriname</div>
+        </div>
+        <div class="tile" data-video-id="oilVADvUep0">
+          <img src="https://img.youtube.com/vi/oilVADvUep0/hqdefault.jpg" alt="Video 1">
+          <div class="title">1954: 1954 CW Coolsma op bezoek bij zijn dochter en haar gezin in Suriname</div>
+        </div>
+        <div class="tile" data-video-id="K3vibYRKRXs">
+            <img src="https://img.youtube.com/vi/K3vibYRKRXs/hqdefault.jpg" alt="Video 2">
+            <div class="title">1955: The Dutch In Latin America, ca 1955</div>
+        </div>
+        
+        <div class="tile" data-video-id="0dBWImyKJk4">
+            <img src="https://img.youtube.com/vi/0dBWImyKJk4/hqdefault.jpg" alt="Video 2">
+            <div class="title">1955: Suriname 1955</div>
+        </div>
+        <div class="tile" data-video-id="Bj-zSjfStXE">
+            <img src="https://img.youtube.com/vi/Bj-zSjfStXE/hqdefault.jpg" alt="Video 2">
+            <div class="title">1955: Suriname 1955 deel 2</div>
+        </div>
+        <div class="tile" data-video-id="1FbqNrFwLdg">
+            <img src="https://img.youtube.com/vi/1FbqNrFwLdg/hqdefault.jpg" alt="Video 2">
+            <div class="title">1956: De Jantjes T R I Suriname</div>
+        </div>		
+        
+        <div class="tile" data-video-id="OnBzAAqNaMI">
+            <img src="https://img.youtube.com/vi/OnBzAAqNaMI/hqdefault.jpg" alt="Video 2">
+            <div class="title">1956: De Jantjes, 1e Suriname Compagnie 1956 (TRIS Troepenmacht in Suriname)</div>
+        </div>		
+
+        <div class="tile" data-video-id="iG0weRCYuRU">
+            <img src="https://img.youtube.com/vi/iG0weRCYuRU/hqdefault.jpg" alt="Video 2">
+            <div class="title">1957: Nieuws uit de West: onderwijs in Suriname (1957)</div>
+        </div>		
+        <div class="tile" data-video-id="OkY76WBxaIE">
+            <img src="https://img.youtube.com/vi/OkY76WBxaIE/hqdefault.jpg" alt="Video 2">
+            <div class="title">1957: Farmers collect fish from flooded fields in Dutch Guiana. HD Stock Footage</div>
+        </div>		
+          
+        <div class="tile" data-video-id="seKKfozMBBY">
+            <img src="https://img.youtube.com/vi/seKKfozMBBY/hqdefault.jpg" alt="Video 2">
+            <div class="title">1958: Statenverkiezingen te Suriname (1958)</div>
+        </div>		
+		<br>
+	</div>
+
+    
+    <h1>1960-1969 Historische Videos Suriname </h1>
+    <div class="container">
+      
+        <div class="tile" data-video-id="9SYcYDD-2tc"> 
+            <img src="https://img.youtube.com/vi/9SYcYDD-2tc/hqdefault.jpg" alt="Video 2">
+            <div class="title">1960: Historische videobeelden van Suriname uit 1960</div>
+        </div>      
+        <div class="tile" data-video-id="6qcXzbMRaSQ"> 
+            <img src="https://img.youtube.com/vi/6qcXzbMRaSQ/hqdefault.jpg" alt="Video 2">
+            <div class="title">1960: Hardloopwedstrijd door Paramaribo, Suriname (1961)</div>
+        </div>                
+        <div class="tile" data-video-id="9SYcYDD-2tc"> 
+            <img src="https://img.youtube.com/vi/9SYcYDD-2tc/hqdefault.jpg" alt="Video 2">
+            <div class="title">1962:Sweri Drietabiki 1962</div>
+        </div>        
+                
+        <div class="tile" data-video-id="nfBx0vT3a-Q"> 
+            <img src="https://img.youtube.com/vi/nfBx0vT3a-Q/hqdefault.jpg" alt="Video 2">
+            <div class="title">1963: 100 jaar afschaffing slavernij Suriname (Documentaire uit 1963)</div>
+        </div>        
+
+        <div class="tile" data-video-id="Vzo2GOIa37A"> 
+            <img src="https://img.youtube.com/vi/Vzo2GOIa37A/hqdefault.jpg" alt="Video 2">
+            <div class="title">1963: Polygoonjournaal: Nieuws uit Suriname - Emancipatiedag 1963</div>
+        </div>
+        <div class="tile" data-video-id="3q0gAUe2FIY"> 
+            <img src="https://img.youtube.com/vi/3q0gAUe2FIY/hqdefault.jpg" alt="Video 2">
+            <div class="title">1963: Nieuws uit Suriname - Emancipatiedag 1963</div>
+        </div>
+        <div class="tile" data-video-id="SMalt3HyPVA"> 
+            <img src="https://img.youtube.com/vi/SMalt3HyPVA/hqdefault.jpg" alt="Video 2">
+            <div class="title">1963: Bouwwerkzaamheden stuwdam Afobaka (1963)</div>
+        </div>
+        <div class="tile" data-video-id="AZ1FmbrZWTA"> 
+            <img src="https://img.youtube.com/vi/AZ1FmbrZWTA/hqdefault.jpg" alt="Video 2">
+            <div class="title">1965: Bezoek van het Koninklijk paar Nederland aan Suriname 1965</div>
+        </div>
+        <div class="tile" data-video-id="GpUNSReCdfE"> 
+            <img src="https://img.youtube.com/vi/GpUNSReCdfE/hqdefault.jpg" alt="Video 2">
+            <div class="title">1966: Historische videobeelden van Suriname uit 1966</div>
+        </div>        
+        <div class="tile" data-video-id="_UQ8HrIhomI"> 
+            <img src="https://img.youtube.com/vi/_UQ8HrIhomI/hqdefault.jpg" alt="Video 2">
+            <div class="title">1968: KINDEREN VAN SURINAME 1 1968</div>
+        </div>    
+   
+		<br>
+	</div>
+
+    <h1>1970-1979 Historische Videos Suriname </h1>
+    <div class="container">
+
+        <div class="tile" data-video-id="tcwvvUtlhgQ">
+            <img src="https://img.youtube.com/vi/tcwvvUtlhgQ/hqdefault.jpg" alt="Video 2">
+            <div class="title">1970: Historische videobeelden van Suriname uit 1970</div>
+        </div>
+        
+        <div class="tile" data-video-id="CWcddjO9BBQ">
+            <img src="https://img.youtube.com/vi/CWcddjO9BBQ/hqdefault.jpg" alt="Video 2">
+            <div class="title">1970: Gramans naar Ghana 1970</div>
+        </div>
+
+        <div class="tile" data-video-id="Qooc5R6xnec">
+            <img src="https://img.youtube.com/vi/Qooc5R6xnec/hqdefault.jpg" alt="Video 2">
+            <div class="title">1971: Suriname 1971</div>
+        </div>
+
+        <div class="tile" data-video-id="mfnRbFTklBI">
+            <img src="https://img.youtube.com/vi/mfnRbFTklBI/hqdefault.jpg" alt="Video 2">
+            <div class="title">1973-1982: Suriname 1973-1982 Deel 1</div>
+        </div>
+        <div class="tile" data-video-id="A-MsITL5Ljs">
+            <img src="https://img.youtube.com/vi/A-MsITL5Ljs/hqdefault.jpg" alt="Video 2">
+            <div class="title">1973-1982: Suriname 1973-1982 Deel 2</div>
+        </div>
+        <div class="tile" data-video-id="fcD6Eneoo6o">
+            <img src="https://img.youtube.com/vi/fcD6Eneoo6o/hqdefault.jpg" alt="Video 2">
+            <div class="title">1973-1982: Suriname 1973-1982 Deel 3</div>
+        </div>
+        <div class="tile" data-video-id="_lmaUMXWePg">
+            <img src="https://img.youtube.com/vi/_lmaUMXWePg/hqdefault.jpg" alt="Video 2">
+            <div class="title">1973-1982: Suriname 1973-1982 Deel 4</div>
+        </div>
+
+        <div class="tile" data-video-id="j7GS6dFPUk0">
+            <img src="https://img.youtube.com/vi/j7GS6dFPUk0/hqdefault.jpg" alt="Video 2">
+            <div class="title">1973-1982: Suriname 1973-1982 Deel 5</div>
+        </div>
+        <div class="tile" data-video-id="47s3e7aWLX0">
+            <img src="https://img.youtube.com/vi/47s3e7aWLX0/hqdefault.jpg" alt="Video 2">
+            <div class="title">1978: Suriname 1978 André en lieda</div>
+        </div>
+        <div class="tile" data-video-id="-RpIZP-Nj5k">
+            <img src="https://img.youtube.com/vi/-RpIZP-Nj5k/hqdefault.jpg" alt="Video 2">
+            <div class="title">1978: Suriname 1978 4K Documentaire</div>
+        </div>        
+        <div class="tile" data-video-id="Wz7wVcbkkl0">
+            <img src="https://img.youtube.com/vi/Wz7wVcbkkl0/hqdefault.jpg" alt="Video 2">
+            <div class="title">1979: Kong Bo Go kom laat ons gaan Documentaire 1979</div>
+        </div>
+
+		<br>
+	</div>    
+
+
+    <h1>1980-1989 Historische Videos Suriname </h1>
+    <div class="container">
+
+        <div class="tile" data-video-id="fskUjF19tVs">
+            <img src="https://img.youtube.com/vi/fskUjF19tVs/hqdefault.jpg" alt="Video 2">
+            <div class="title">1980: Bouterse grijpt de macht in Suriname, een terugblik</div>
+        </div>
+        <div class="tile" data-video-id="GX5AL2Fvvtw">
+            <img src="https://img.youtube.com/vi/GX5AL2Fvvtw/hqdefault.jpg" alt="Video 2">
+            <div class="title">1982: Suriname Nieuws Docu - Zonen van Suriname - 8 December 1982 - 8 Dec. 2024 Delen AUB !</div>
+        </div>        
+
+		<br>
+	</div>    
+
+
+    <h1>1940-1975 TRIS TRoepenmacht In Suriname</h1>
+    <div class="container">
+        <div class="tile" data-video-id="lAsVZ69no98"> 
+            <img src="https://img.youtube.com/vi/lAsVZ69no98/hqdefault.jpg" alt="Video 2">
+            <div class="title">1940-1975: Troepenmacht in Suriname (NIMH)</div>
+        </div>
+
+        <div class="tile" data-video-id="Qu5S00GbM4o"> 
+            <img src="https://img.youtube.com/vi/Qu5S00GbM4o/hqdefault.jpg" alt="Video 2">
+            <div class="title">1960+: Suriname Nieuws : 24 Okt. 1975 TRIS En KL in Suriname jaren '60 nu in kleur Delen AUB !</div>
+        </div>
+
+        <div class="tile" data-video-id="oxxiRfnSIyo"> 
+            <img src="https://img.youtube.com/vi/oxxiRfnSIyo/hqdefault.jpg" alt="Video 2">
+            <div class="title">1962: Van Albina tot Nickerie - de Troepenmacht in Suriname (TRIS)</div>
+            <!-- Vader Lieda - David Apon https://www.youtube.com/watch?v=oxxiRfnSIyo&t=921s -->
+        </div>
+        <div class="tile" data-video-id="3eERL4DLEKQ"> 
+            <img src="https://img.youtube.com/vi/3eERL4DLEKQ/hqdefault.jpg" alt="Video 2">
+            <div class="title">1962: Actie Welkom 1962</div>
+        </div>
+      
+        <div class="tile" data-video-id="FSEY1kI-ZqI"> 
+            <img src="https://img.youtube.com/vi/FSEY1kI-ZqI/hqdefault.jpg" alt="Video 2">
+            <div class="title">1967: Suriname - Albina - TRIS 1967</div>
+        </div>        
+        <div class="tile" data-video-id="NztSXgnJ9wM"> 
+            <img src="https://img.youtube.com/vi/NztSXgnJ9wM/hqdefault.jpg" alt="Video 2">
+            <div class="title">1967: Suriname - Nickerie - rtenplantage - Kampement Tris - 1967</div>
+        </div>       
+        <div class="tile" data-video-id="oxxiRfnSIyo"> 
+            <img src="https://img.youtube.com/vi/oxxiRfnSIyo/hqdefault.jpg" alt="Video 2">
+            <div class="title">1967: Suriname-Brownsweg-Onverwacht-Spoorweg 1967-TRIS</div>
+        </div>        
+        
+        <div class="tile" data-video-id="-ZGvrbmSD1w"> 
+            <img src="https://img.youtube.com/vi/-ZGvrbmSD1w/hqdefault.jpg" alt="Video 2">
+            <div class="title">1969: TRIS Alfa Compagnie 4e peloton 1969 (TRoepenmacht In Suriname)</div>
+            <!-- Zie ook:  https://archive.org/details/trisfilm -->
+        </div>
+
+        <div class="tile" data-video-id="12uOcRuloi8"> 
+            <img src="https://img.youtube.com/vi/12uOcRuloi8/hqdefault.jpg" alt="Video 2">
+            <div class="title">1971: Jeroen Lorijnen- soldaten in Suriname 1971 1</div>
+        </div>
+
+        <div class="tile" data-video-id="mkAvBg0o_fM"> 
+            <img src="https://img.youtube.com/vi/mkAvBg0o_fM/hqdefault.jpg" alt="Video 2">
+            <div class="title">1971: Jeroen Lorijnen- soldaten in Suriname 1971 3</div>
+        </div>
+        <div class="tile" data-video-id="2LETiRFZNuw"> 
+            <img src="https://img.youtube.com/vi/2LETiRFZNuw/hqdefault.jpg" alt="Video 2">
+            <div class="title">1971: Jeroen Lorijnen- soldaten in Suriname 1971 4</div>
+        </div>
+        
+        <div class="tile" data-video-id="ebpeppqUpkA"> 
+            <img src="https://img.youtube.com/vi/ebpeppqUpkA/hqdefault.jpg" alt="Video 2">
+            <div class="title">1971: Jeroen Lorijnen- soldaten in Suriname 1971 5</div>
+        </div>
+        
+        <div class="tile" data-video-id="0G5-I5Otn2I">
+            <img src="https://img.youtube.com/vi/0G5-I5Otn2I/hqdefault.jpg" alt="Video 2">
+            <div class="title">1974: Soldaat in Suriname (TRIS)</div>
+        </div>
+		<br>
+	</div>
+
+
+    <h1>1900-1959 Historische Videos Suriname (SPECIFIC) </h1>
+    <div class="container">  
+
+      <!--
+      Waterkant.Net
+
+      Er bestaat maar heel weinig beeld van Suriname uit de eerste helft van de vorige eeuw. 
+      Daarom is deze film van de Nederlander Feit Mathijssen zo bijzonder. Hij maakte in 1940 opnames in en rond Paramaribo. 
+
+      Het Paramaribo dat Mathijssen filmde lijkt nauwelijks op een stad. Landelijk lijkt het, veel groen, slootjes en greppels, veel wandelende mensen, 
+      huizen en huisjes verscholen achter bomen.
+
+      De Centrale Markt in Paramaribo, ook nu nog een belangrijke plek in de stad, 
+      bestond ook al in de jaren ’40. Het is er druk, de handel is levendig. Het lijkt dé ontmoetingsplek van de stad. 
+
+      We zien dat de handel wordt aangevoerd met koralen en zeilschepen. 
+      Ook rond de markt is het druk. Straathandel, de kapper werkt op straat, we zien een klok midden op een kruispunt.
+
+      Mannen lopen rond in klassieke, witte tropenkleding. Er rijdt een overvol en schommelend treintje door de binnenstad, 
+      met open wagons. Of de schamele huisjes en hun nauwelijks geklede bewoners 
+      ook in de stad zijn gefilmd is moeilijk te zien. De korjalen naast het huis doen vermoeden dat het meer richting binnenland is
+       -->
+      <div class="tile">
+        <a href="https://www.youtube.com/watch?v=VSfc2YNcsm0&t=314s" target="_blank" 
+         title="The Dutch West Indies include the islands of Aruba and St.
+                Martin as well as Dutch Guiana resting on the mainland of South America (4:30)">
+          <img src="https://img.youtube.com/vi/VSfc2YNcsm0/hqdefault.jpg" alt="Video 2">
+          <div class="title">1940: " WORLD IN ACTION THE FIGHTING DUTCH " HOLLAND / NETHERLANDS & DUTCH COLONIES IN WWII 42894</div>
+      </div>
+        <div class="tile">
+          <a href="https://www.britishpathe.com/cdn/britishpathe/previews/624/650411f29e0ac6e6e21bf3ba3218f428/2/6a205628b7fbe2a005715a3e5413dc8e/186994.mp4" target="_blank">
+          <img src="https://img.youtube.com/vi/UNXyvmVHEOM/hqdefault.jpg" alt="Playlist Image"> 
+          <div class="title">1958: Suriname ROAD CONQUERS JUNGLE (1958)</div>
+          </a> 
+        </div>	
+      </div>
+        <div class="tile">
+          <a href="https://archive.org/download/victoria_palmplantage/victoria_palmplantage_1280x1024_512kb.mp4" target="_blank">
+          <img src="https://archive.org/download/victoria_palmplantage/victoria_palmplantage.thumbs/victoria_palmplantage_1280x1024_000053.jpg" alt="Playlist Image"> 
+          <div class="title">1969: Collectie IISG - Victoria, an oilpalm estate in the jungle of Surinam</div>
+          </a> 
+        </div>	        
+    </div>	
+        
+	<h1>Historische Videos Suriname - Playlists</h1>
+		<div class="container">
+		<div class="tile"> 
+		  <a href="https://www.youtube.com/playlist?list=PLhmEybF6H1enVfFUl4pvodgywjMkNP4JG" target="_blank">
+		  <img src="https://img.youtube.com/vi/UNXyvmVHEOM/hqdefault.jpg" alt="Playlist Image"> 
+		  <div class="title">Terug in de Tijd - door Rapar Broadcasting Network</div>
+		  </a> 
+		</div>
+		<div class="tile"> 
+		  <a href="https://www.youtube.com/playlist?list=PLcTD94RAEJMoUukbKN4CXd73U9c9LdPb_" target="_blank">
+		  <img src="https://i.ytimg.com/vi/GpUNSReCdfE/hqdefault.jpg" alt="Playlist Image"> 
+		  <div class="title">De geschiedenis van Suriname - door Suriname View</div>
+		  </a> 
+		</div>
+		<div class="tile"> 
+		  <a href="https://www.youtube.com/playlist?list=PLsomnSceYW4vMnH8wL4MfihQ7vDtYkHTN" target="_blank">
+		  <img src="https://i.ytimg.com/vi/7lZI1vnQpGM/hqdefault.jpg" alt="Playlist Image"> 
+		  <div class="title">Surinaamse geschiedenis - door Suriname media centre</div>
+		  </a> 
+		</div>
+		<div class="tile"> 
+		  <a href="https://www.youtube.com/playlist?list=PL-Di9oq1OVWhIBtlmxmRSIiKrJCgBKRsK" target="_blank">
+		  <img src="https://i.ytimg.com/vi/90dkVXgNons/hqdefault.jpg" alt="Playlist Image"> 
+		  <div class="title">De geschiedenis van Suriname - door GetyoursIT Tama-re Sma Sani</div>
+		  </a> 
+		</div>
+        <div class="tile"> 
+		  <a href="https://www.youtube.com/playlist?list=PLYS0S_6VOd3BwF-uOleH27_AfUFR1Ak9j" target="_blank">
+		  <img src="https://i.ytimg.com/vi/6DMnn7bcyp0/hqdefault.jpg" alt="Playlist Image"> 
+		  <div class="title">De geschiedenis van Suriname - door Suriname View</div>
+		  </a> 
+		</div>
+</h1>     
+        <!-- Add more tiles as needed -->
+    </div>
+
+    <div class="video-modal" id="videoModal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <iframe id="videoFrame" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
+
+   <script>
+    const tiles = document.querySelectorAll('.tile');
+
+    tiles.forEach(tile => {
+      // Skip tiles that already contain an <a> tag
+      if (tile.querySelector('a')) return;
+
+      const videoId = tile.getAttribute('data-video-id');
+      if (videoId) {
+        tile.addEventListener('click', () => {
+          const url = `https://www.youtube.com/watch?v=${videoId}`;
+          window.open(url, '_blank'); // open in new tab
+        });
+      }
+    });
+  </script>
+
+
+
+</body>
+</html>
