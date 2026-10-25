@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Database</title>
+    <style>
+        /* --- CSS STYLES --- */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f9;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 { text-align: center; color: #333; margin-bottom: 30px; }
+
+        /* Controls */
+        .controls {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .control-group { display: flex; flex-direction: column; }
+        
+        label { font-weight: bold; margin-bottom: 5px; color: #555; }
+        
+        select {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            min-width: 200px;
+            cursor: pointer;
+        }
+
+        /* Movie Grid */
+        #movie-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); /* Responsive grid */
+            gap: 25px;
+        }
+
+        .movie-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .movie-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Image Handling */
+        .poster-container {
+            width: 100%;
+            height: 330px; /* Fixed height for uniformity */
+            overflow: hidden;
+            background-color: #eee;
+        }
+
+        .poster-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensures image fills box without stretching */
+        }
+
+        .card-content { padding: 15px; }
+
+        .movie-title {
+            font-size: 1.1em;
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #2c3e50;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .movie-meta {
+            color: #7f8c8d;
+            font-size: 0.9em;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: #e0e6ed;
+            color: #2c3e50;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            font-weight: 600;
+        }
+
+        .error-msg {
+            color: red;
+            text-align: center;
+            grid-column: 1 / -1;
+            padding: 20px;
+            background: #ffe6e6;
+            border-radius: 5px;
+        }
+        
+        .loading {
+            text-align: center;
+            grid-column: 1 / -1;
+            font-size: 1.2em;
+            color: #666;
+        }
+        /* --- NIEUWE STIJLEN VOOR LINKS --- */
+        .poster-wrapper {
+            position: relative;
+            display: block; /* Zorgt dat de link om het hele plaatje zit */
+        }
+        
+        .poster-wrapper:hover img {
+            opacity: 0.9;
+            transform: scale(1.02);
+            transition: all 0.2s;
+        }
+
+        .imdb-badge {
+            background-color: #f5c518; /* De bekende IMDb gele kleur */
+            color: #000;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: bold;
+            text-decoration: none; /* Geen onderstreping */
+            transition: background 0.2s;
+        }
+
+        .imdb-badge:hover {
+            background-color: #e2b616;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>My Movie Collection</h1>
+
+    <div class="controls">
+        <div class="control-group">
+            <label for="genre-select">Genre</label>
+            <select id="genre-select">
+                <option value="all">All Genres</option>
+            </select>
+        </div>
+
+        <div class="control-group">
+            <label for="decade-select">Decade</label>
+            <select id="decade-select">
+                <option value="all">All Decades</option>
+            </select>
+        </div>
+    </div>
+
+    <div id="movie-container">
+        <div class="loading">Loading movies from database...</div>
+    </div>
+
+<script>
+        // --- CONFIGURATION ---
+        const DATA_URL = 'database/data.json';
+        
+        // LET OP: Jouw JSON bevat al "posters/...", dus hier alleen "database/"
+        const BASE_PATH = 'database/'; 
+        
+        // State variables
+        let allMovies = []; 
+
+        // --- DOM ELEMENTS ---
+        const container = document.getElementById('movie-container');
+        const genreSelect = document.getElementById('genre-select');
+        const decadeSelect = document.getElementById('decade-select');
+
+        // --- HELPER: Get Decade ---
+        const getDecade = (year) => Math.floor(year / 10) * 10;
+
+        // --- 1. FETCH DATA ---
+        async function loadData() {
+            try {
+                const response = await fetch(DATA_URL);
+                if (!response.ok) throw new Error(`HTTP Error: ${response.status}`);
+                
+                allMovies = await response.json();
+                
+                initializeFilters();
+                renderMovies(allMovies);
+
+            } catch (error) {
+                console.error("Fetch error:", error);
+                container.innerHTML = `<div class="error-msg">Error loading data: ${error.message}</div>`;
+            }
+        }
+
+        // --- 2. POPULATE MENUS ---
+        function initializeFilters() {
+            // Unieke Genres verzamelen (splitst "Crime, Drama" op de komma)
+            let genreSet = new Set();
+            allMovies.forEach(m => {
+                if(m.genre) {
+                    m.genre.split(',').forEach(g => genreSet.add(g.trim()));
+                }
+            });
+            const genres = [...genreSet].sort();
+            
+            // Unieke Decennia
+            const decades = [...new Set(allMovies.map(m => getDecade(m.year)))].sort((a, b) => a - b);
+
+            genres.forEach(g => {
+                const opt = document.createElement('option');
+                opt.value = g; opt.textContent = g;
+                genreSelect.appendChild(opt);
+            });
+
+            decades.forEach(d => {
+                const opt = document.createElement('option');
+                opt.value = d; opt.textContent = `${d}s`;
+                decadeSelect.appendChild(opt);
+            });
+        }
+
+// --- 3. RENDER MOVIES (Aangepast met Links) ---
+        function renderMovies(movieList) {
+            container.innerHTML = '';
+
+            if (movieList.length === 0) {
+                container.innerHTML = '<div style="text-align:center; grid-column: 1/-1;">No movies found.</div>';
+                return;
+            }
+
+            movieList.forEach(movie => {
+                // 1. Poster Pad
+                const imageSrc = movie.poster ? `${BASE_PATH}${movie.poster}` : 'https://via.placeholder.com/300x450?text=No+Image';
+                
+                // 2. IMDb Link (Check of ID bestaat, anders link naar homepage)
+                const imdbLink = movie.imdbID ? `https://www.imdb.com/title/${movie.imdbID}/` : '#';
+                
+                // 3. YouTube Search Link (Zoekt automatisch naar "Titel trailer")
+                // encodeURIComponent zorgt dat spaties en tekens veilig zijn voor een URL
+                const youtubeLink = `https://www.youtube.com/results?search_query=${encodeURIComponent(movie.title + " trailer")}`;
+
+                const card = document.createElement('div');
+                card.className = 'movie-card';
+                
+                // De HTML is aangepast met <a> tags
+                card.innerHTML = `
+                    <div class="poster-container">
+                        <a href="${youtubeLink}" target="_blank" title="Watch trailer on YouTube">
+                            <img src="${imageSrc}" alt="${movie.title} poster" loading="lazy"
+                                 onerror="this.src='https://via.placeholder.com/300x450?text=No+Image';">
+                        </a>
+                    </div>
+                    <div class="card-content">
+                        <div class="movie-title" title="${movie.title}">${movie.title}</div>
+                        
+                        <div class="movie-meta">
+                            <span>${movie.year}</span>
+                            
+                            <a href="${imdbLink}" target="_blank" class="imdb-badge" title="View on IMDb">
+                                ⭐ ${movie.rating || 'N/A'}
+                            </a>
+                        </div>
+                        
+                        <div style="font-size: 0.8em; color: #aaa; margin-bottom:5px;">
+                            ${getDecade(movie.year)}s
+                        </div>
+                        <span class="tag">${movie.genre}</span>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        // --- 4. FILTER LOGIC ---
+        function filterMovies() {
+            const selectedGenre = genreSelect.value;
+            const selectedDecade = decadeSelect.value;
+
+            const filtered = allMovies.filter(movie => {
+                // Check Genre (bevat de film dit genre?)
+                const matchesGenre = selectedGenre === 'all' || (movie.genre && movie.genre.includes(selectedGenre));
+                
+                // Check Decade
+                const movieDecade = getDecade(movie.year);
+                const matchesDecade = selectedDecade === 'all' || movieDecade === Number(selectedDecade);
+
+                return matchesGenre && matchesDecade;
+            });
+
+            renderMovies(filtered);
+        }
+
+        // --- EVENT LISTENERS ---
+        genreSelect.addEventListener('change', filterMovies);
+        decadeSelect.addEventListener('change', filterMovies);
+
+        // --- START APP ---
+        loadData();
+
+    </script>
+</body>
+</html>
